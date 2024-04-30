@@ -1,4 +1,56 @@
 {
+  "users": [
+    {
+      "id": 0,
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": 1,
+      "username": "b",
+      "password": "b"
+    },
+    {
+      "id": 2,
+      "username": "c",
+      "password": "c"
+    },
+    {
+      "id": 3,
+      "username": "d",
+      "password": "d"
+    },
+    {
+      "id": 4,
+      "username": "e",
+      "password": "e"
+    },
+    {
+      "id": 5,
+      "username": "f",
+      "password": "f"
+    },
+    {
+      "id": 6,
+      "username": "g",
+      "password": "g"
+    },
+    {
+      "id": 7,
+      "username": "h",
+      "password": "h"
+    },
+    {
+      "id": 8,
+      "username": "i",
+      "password": "i"
+    },
+    {
+      "id": 9,
+      "username": "j",
+      "password": "j"
+    }
+  ],
   "locations": [
     {
       "id": 0,
