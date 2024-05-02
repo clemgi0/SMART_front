@@ -23,4 +23,13 @@ export class LoginService {
 
     return false;
   }
+
+  async getId(username: string) {
+    const response = await fetch(this.url);
+    const data = await response.json();
+
+    const foundUser = data.find((user: any) => user.username === username);
+
+    return foundUser.id;
+  }
 }

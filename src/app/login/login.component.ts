@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,7 @@ export class LoginComponent {
     password: new FormControl(''),
   });
   loginService: LoginService = inject(LoginService);
+  router: Router = new Router;
 
   constructor() {}
 
@@ -31,7 +33,10 @@ export class LoginComponent {
     const password = this.loginForm.get('password')?.value;
 
     if (username && password && await this.loginService.testLogin(username!, password!)) {
-      console.log(`${username} logged in.`);  
+      const id = await this.loginService.getId(username!);
+
+      console.log(`${username} logged in with id ${id}.`);
+      this.router.navigate(['/map', id]);
 
       return;
     }
