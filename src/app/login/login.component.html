@@ -1,0 +1,7 @@
+<section>
+        <form [formGroup]="loginForm" (submit)="login()">
+            <input type="text" placeholder="Username" formControlName="username">
+            <input type="password" placeholder="Password" formControlName="password">
+            <button class="primary" type="submit">Login</button>
+        </form>
+</section>

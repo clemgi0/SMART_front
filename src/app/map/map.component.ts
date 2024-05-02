@@ -3,11 +3,7 @@ import * as L from 'leaflet';
 
 @Component({
   selector: 'app-map',
-  template: `
-    <div class="map-frame">
-      <div id="map"></div>
-    </div>
-  `,
+  templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements AfterViewInit {
