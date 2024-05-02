@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   template: `
   <section>
     <form [formGroup]="loginForm" (submit)="login()">
-      <input type="username" placeholder="Username" formControlName="username">
+      <input type="text" placeholder="Username" formControlName="username">
       <input type="password" placeholder="Password" formControlName="password">
       <button class="primary" type="submit">Login</button>
     </form>
@@ -20,11 +20,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('a'),
+    password: new FormControl('a'),
   });
   loginService: LoginService = inject(LoginService);
-  router: Router = new Router;
+  router: Router = inject(Router);
 
   constructor() {}
 
