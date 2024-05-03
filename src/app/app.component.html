@@ -1,11 +1,16 @@
-<main>
-    <header class="brand-name">
-        <a [routerLink]="['/']">
-        <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-        </a>
-    </header>
+    <main>
+        <header class="brand-name">
+            <div class="head-div">
+                <a [routerLink]="['/']">
+                    <img class="brand-logo" src="/assets/logo.png" alt="logo" aria-hidden="true">
+                </a>
+            </div>
+            <div class="head-div">
+                <p>Tracks</p>
+            </div>
+        </header>
 
-    <section class="content">
-        <router-outlet></router-outlet>
-    </section>
-</main>
+        <section class="content">
+            <router-outlet></router-outlet>
+        </section>
+    </main>

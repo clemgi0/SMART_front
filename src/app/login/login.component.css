@@ -1,0 +1,38 @@
+section {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    height: 100vh; /* Pour occuper toute la hauteur de la page */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column; /* Aligner les éléments verticalement */
+    align-items: center; /* Centrer horizontalement */
+    margin-top: -170px; /* Déplacer vers le haut de 50 pixels */
+  }
+  
+  label {
+    font-weight: bold; /* Texte en gras */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 5px; /* Espacement avec les champs de texte */
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    margin-bottom: 10px; /* Espacement entre les champs */
+    border-radius: 5px; /* Arrondir les angles */
+    padding: 8px; /* Augmenter la marge intérieure */
+    border: 1px solid #ccc; /* Bordure grise */
+  }
+  
+  button {
+    background-color: #a81725; /* Rouge */
+    color: white; /* Texte blanc */
+    border: none;
+    border-radius: 5px; /* Arrondir les angles */
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px; /* Espacement avec les champs de texte */
+  }
+  
