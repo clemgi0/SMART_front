@@ -1,0 +1,10 @@
+<div class="container">
+    <ul *ngFor="let tracker of trackerList" class="tracker-list">
+      <li class="tracker-item">
+        <button class="tracker-button button-{{tracker.id}}" (click)="showMap(tracker)">
+          Tracker ID: {{tracker.id}} | Nom: {{tracker.name}} | Status: {{tracker.status ? "alert" : "normal"}}
+        </button>
+      </li>
+    </ul>
+</div>
+  

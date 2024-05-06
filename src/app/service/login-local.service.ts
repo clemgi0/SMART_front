@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class LoginLocalService {
   url: string = 'http://localhost:3000/users';
 
   constructor() { }
@@ -37,7 +37,10 @@ export class LoginService {
     const response = await fetch(this.url);
     const data = await response.json();
 
-    const foundUser = data.find((user: any) => user.id === id);
+    var foundUser = data.find((user: any) => user.id === id);
+    if (!foundUser) {
+      foundUser = data.find((user: any) => user.id === parseInt(id));
+    }
 
     return foundUser;
   }

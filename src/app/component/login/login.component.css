@@ -9,7 +9,7 @@ section {
     display: flex;
     flex-direction: column; /* Aligner les éléments verticalement */
     align-items: center; /* Centrer horizontalement */
-    margin-top: -170px; /* Déplacer vers le haut de 50 pixels */
+    margin-top: -170px; /* Déplacer vers le haut */
   }
   
   label {
