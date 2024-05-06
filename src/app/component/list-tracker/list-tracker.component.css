@@ -1,8 +1,33 @@
+header {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 10px;
+  background-color: #FF1C31;
+  box-shadow: 0px 5px 25px var(--shadow-color);
+}
+
+header:last-child {
+  margin-left: auto;
+}
+
+header p {
+  margin: 0px 0px 0px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.brand-logo {
+  height: 40px;
+}
+
 .container {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
+    min-height: 90vh; /* Full viewport height */
   }
   
   .tracker-list {
@@ -15,16 +40,53 @@
     margin-bottom: 10px; /* Adjust spacing between items */
   }
   
+  .tracker-item-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: 300px; /* Adjust width as needed */
+}
+
+  .tracker-item-card small {
+      font-size: 12px;
+      color: #666666;
+  }
+
+  .tracker-item-card p {
+      font-size: 16px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+  }
+
   .tracker-button {
-    background-color: #a81725; /* Red color */
-    color: white;
+    color: #FFFFFF;
+    background-color: #FF1C31;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
+    margin-top: 10px;
+    min-width: 100px;
+  }
+
+  .tracker-button:hover {
+    background-color: #D71729;
+  }
+
+  .signout-button {
+    color: #FFFFFF;
+    background: none;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    min-width: 100px;
   }
   
-  .tracker-button:hover {
-    background-color: #e74c3c; /* Darker red on hover */
+  .signout-button:hover {
+    color: #000000;
+    background-color: #FFFFFF;
   }
   

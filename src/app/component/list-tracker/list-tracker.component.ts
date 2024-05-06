@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ListTrackerService } from '../../service/list-tracker.service';
 import { Tracker } from '../../interface/tracker';
 import { User } from '../../interface/user';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-list-tracker',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './list-tracker.component.html',
   styleUrl: './list-tracker.component.css'
 })

@@ -5,9 +5,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Tracker } from '../../interface/tracker';
 import { Position } from '../../interface/position';
 import { MapService } from '../../service/map.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-map',
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
@@ -20,7 +23,7 @@ export class MapComponent implements AfterViewInit {
   tracker: Tracker = { id: 0, status: 0, home_latitude: 0, home_longitude: 0, name: ''};
   positionHistory: L.Marker[] = [];
   homeIcon = L.icon({
-    iconUrl: '../assets/logo.png',
+    iconUrl: '../assets/logo.svg',
     iconSize: [20, 20],
   });
 

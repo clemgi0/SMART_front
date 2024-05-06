@@ -1,9 +1,31 @@
 <section>
+    <div class="center">
+        <a [routerLink]="['/']">
+            <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+        </a>
+        <h1>Register</h1>
+    </div>
+
     <form [formGroup]="registerForm" (submit)="register()">
-        <label>Username</label>
-        <input type="text" placeholder="Username" formControlName="username">
-        <label>Password</label>
-        <input type="password" placeholder="Password" formControlName="password">
-        <button class="primary" type="submit">Register</button>
+        <div class="controlForm">
+            <label>Username</label>
+            <input type="text" placeholder="Username" formControlName="username">
+        </div>
+        
+        <div class="controlForm">
+            <label>Password</label>
+            <input type="password" placeholder="Password" formControlName="password">
+        </div>
+
+        <div class="buttonContainer">
+            <button class="buttonPrimary" type="submit">Register</button>
+        </div>
     </form>
+
+    <div>
+        <div class="buttonContainer">
+            <button class="buttonSecondary" [routerLink]="['/']">Go back</button>
+        </div>
+    </div>
+
 </section>

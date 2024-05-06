@@ -1,8 +1,16 @@
+<header>
+    <a [routerLink]="['/list-tracker']">
+        <img class="brand-logo" src="/assets/icon.svg" alt="logo" aria-hidden="true">
+    </a>
+    <p [routerLink]="['/list-tracker']">Home</p>
+    <button [routerLink]="['/']" class="signout-button">Sign out</button>
+</header>
+
 <div class="map-frame">
     <div id="map"></div>
     <div class="back-button-container">
         <button class="back-button" (click)="goBack()">
-            Back
+            Go back
         </button>
     </div>
 </div>

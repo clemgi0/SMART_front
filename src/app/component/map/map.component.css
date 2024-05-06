@@ -1,10 +1,35 @@
+header {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 10px;
+  background-color: #FF1C31;
+  box-shadow: 0px 5px 25px var(--shadow-color);
+}
+
+header:last-child {
+  margin-left: auto;
+}
+
+header p {
+  margin: 0px 0px 0px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.brand-logo {
+  height: 40px;
+}
+
 .map-frame {
   border: 2px solid black;
   height: 37em;
 }
 
 #map {
-  height: 100%;
+  min-height: 90%;
 }
 
 .back-button-container {
@@ -15,11 +40,31 @@
 }
 
 .back-button {
-  background-color: #f44336;
+  background-color: #FF1C31;
   color: white;
   padding: 0.3em 1em;
   border: none;
   cursor: pointer;
   border-radius: 0.5em;
+  min-width: 100px;
+}
+
+.back-button:hover {
+  background-color: #D71729; /* Darker red on hover */
+}
+
+.signout-button {
+  color: #FFFFFF;
+  background: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.signout-button:hover {
+  color: #000000;
+  background-color: #FFFFFF;
 }
 
