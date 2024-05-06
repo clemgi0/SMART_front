@@ -12,12 +12,12 @@ import { ActivatedRoute } from '@angular/router';
 export class MapComponent implements AfterViewInit {
   private map: L.Map | L.LayerGroup<any> | undefined;
   loginService: LoginService = inject(LoginService);
-  userId: string | undefined;
-  user: User = { id: 0, username: '', password: '', lat: 0, lng: 0 };
+  user_id: string | undefined;
+  user: User = { id: 0, access_token: '', home:{lat: 0, lng: 0}, tracker: {id: 0, status: 0}};
 
   private initMap(): void {
     this.map = L.map('map', {
-      center: [ this.user!.lat, this.user!.lng ],
+      center: [ this.user!.home.lat, this.user!.home.lng ],
       zoom: 15
     });
 
@@ -32,16 +32,20 @@ export class MapComponent implements AfterViewInit {
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
-      this.userId = params['id'];
+      this.user.id = params['user_id'];
+    });
+
+    this.route.queryParams.subscribe(params => {
+      this.user.access_token = params['access_token'];
     });
   }
 
   async ngAfterViewInit(): Promise<void> {
-    const tempUser = await this.loginService.getUserById(this.userId!);
-    this.setUser(tempUser);
+    const res = await this.loginService.getHome(this.user.access_token);
+    this.setUser(res);
     this.initMap();
 
-    var marker = L.marker([this.user.lat, this.user.lng]).addTo(this.map!);
+    var marker = L.marker([this.user.home.lat, this.user.home.lng]).addTo(this.map!);
     marker.bindPopup("<b>Home</b><br>Pop me").openPopup();
 
     this.map?.on('click', this.onMapClick.bind(this));
@@ -55,11 +59,10 @@ export class MapComponent implements AfterViewInit {
         .openOn(this.map as L.Map);
   }
 
-  setUser(tempUser: any) {
-    this.user.id = tempUser.id;
-    this.user.username = tempUser.username;
-    this.user.password = tempUser.password;
-    this.user.lat = tempUser.home.lat;
-    this.user.lng = tempUser.home.lng;
+  setUser(res: any) {
+    this.user.home.lat = res[0].latitude;
+    this.user.home.lng = res[0].longitude;
+    this.user.tracker.id = res[0].id;
+    this.user.tracker.status = res[0].status;
   }
 }
