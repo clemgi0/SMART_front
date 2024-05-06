@@ -3,52 +3,92 @@
     {
       "id": 0,
       "username": "a",
-      "password": "a"
+      "password": "a",
+      "home": {
+        "lat": 45.76511397182369,
+        "lng": 4.882631010786216
+      }
     },
     {
       "id": 1,
       "username": "b",
-      "password": "b"
+      "password": "b",
+      "home": {
+        "lat": 45.76204898991928,
+        "lng": 4.893458594133207
+      }
     },
     {
       "id": 2,
       "username": "c",
-      "password": "c"
+      "password": "c",
+      "home": {
+        "lat": 45.76012189606702,
+        "lng": 4.866609667562192
+      }
     },
     {
       "id": 3,
       "username": "d",
-      "password": "d"
+      "password": "d",
+      "home": {
+        "lat": 45.76955695394995,
+        "lng": 4.897163229225185
+      }
     },
     {
       "id": 4,
       "username": "e",
-      "password": "e"
+      "password": "e",
+      "home": {
+        "lat": 45.77844827407943,
+        "lng": 4.866306485717903
+      }
     },
     {
       "id": 5,
       "username": "f",
-      "password": "f"
+      "password": "f",
+      "home": {
+        "lat": 45.75701597527744,
+        "lng": 4.899110186138961
+      }
     },
     {
       "id": 6,
       "username": "g",
-      "password": "g"
+      "password": "g",
+      "home": {
+        "lat": 45.78042318668971,
+        "lng": 4.890100498442831
+      }
     },
     {
       "id": 7,
       "username": "h",
-      "password": "h"
+      "password": "h",
+      "home": {
+        "lat": 45.76320071670317,
+        "lng": 4.888802663111734
+      }
     },
     {
       "id": 8,
       "username": "i",
-      "password": "i"
+      "password": "i",
+      "home": {
+        "lat": 45.777482664331034,
+        "lng": 4.887127527575051
+      }
     },
     {
       "id": 9,
       "username": "j",
-      "password": "j"
+      "password": "j",
+      "home": {
+        "lat": 45.75473465005302,
+        "lng": 4.877392761272209
+      }
     }
   ]
 }

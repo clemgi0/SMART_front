@@ -9,7 +9,7 @@ const routeConfig: Routes = [
       title: 'Login'
     },
     {
-      path: 'map/:id',
+      path: 'map',
       component: MapComponent,
       title: 'Map'
     },

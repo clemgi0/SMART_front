@@ -25,10 +25,10 @@ export class LoginComponent {
     const password = this.loginForm.get('password')?.value;
 
     if (username && password && await this.loginService.testLogin(username!, password!)) {
-      const id = await this.loginService.getId(username!);
+      const user = await this.loginService.getUserByUsername(username!);
 
-      console.log(`${username} logged in with id ${id}.`);
-      this.router.navigate(['/map', id]);
+      console.log(`${username} logged in with id ${user.id}.`);
+      this.router.navigate(['/map'], { queryParams: { id: user.id } });
 
       return;
     }
