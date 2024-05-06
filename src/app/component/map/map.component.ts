@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, inject } from '@angular/core';
 import * as L from 'leaflet';
 import { User } from '../../interface/user';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Tracker } from '../../interface/tracker';
 import { Position } from '../../interface/position';
 import { MapService } from '../../service/map.service';
@@ -14,6 +14,7 @@ import { MapService } from '../../service/map.service';
 export class MapComponent implements AfterViewInit {
   private map: L.Map | L.LayerGroup<any> | undefined;
   mapService: MapService = inject(MapService);
+  router: Router = inject(Router);
   user_id: string | undefined;
   user: User = { id: 0, access_token: ''};
   tracker: Tracker = { id: 0, status: 0, home_latitude: 0, home_longitude: 0, name: ''};
@@ -75,5 +76,10 @@ export class MapComponent implements AfterViewInit {
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(this.map as L.Map);
+  }
+
+  goBack() {
+    const userJson = JSON.stringify(this.user);
+    this.router.navigate(['/list-tracker'], { queryParams: { user: userJson} })
   }
 }
