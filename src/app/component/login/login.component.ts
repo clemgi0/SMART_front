@@ -26,19 +26,21 @@ export class LoginComponent {
     const password = this.loginForm.get('password')?.value;
 
     if (username && password) {
-      user = await this.loginService.testLogin(username, password);
-
       try {
         const user = await this.loginService.testLogin(username, password);
 
         const userJson = JSON.stringify(user);
         this.router.navigate(['/list-tracker'], { queryParams: { user: userJson} })
       } catch (error) {
-        console.log(`Failed to log in: ${error}`);
+        console.log(`Failed to login: ${error}`);
       }
 
     } else {
       console.log('Username and password are required.');
     }
+  }
+
+  register() {
+    this.router.navigate(['/register']);
   }
 }

@@ -21,7 +21,7 @@ export class MapComponent implements AfterViewInit {
   positionHistory: L.Marker[] = [];
   homeIcon = L.icon({
     iconUrl: '../assets/logo.png',
-    iconSize: [10, 10],
+    iconSize: [20, 20],
   });
 
   private initMap(): void {
@@ -57,7 +57,7 @@ export class MapComponent implements AfterViewInit {
     var marker = L.marker([this.tracker.home_latitude, this.tracker.home_longitude], {icon: this.homeIcon}).addTo(this.map!);
     marker.bindPopup("<b>Home</b><br>Pop me", {autoClose: false}).openPopup();
     
-    if(this.tracker.status === 0) {
+    if(this.tracker.status) {
       const res = await this.mapService.getHistoryPosition(this.user.access_token, this.tracker.id);
 
       res.forEach((position: any) => {

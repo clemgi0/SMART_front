@@ -1,0 +1,9 @@
+<section>
+    <form [formGroup]="registerForm" (submit)="register()">
+        <label>Username</label>
+        <input type="text" placeholder="Username" formControlName="username">
+        <label>Password</label>
+        <input type="password" placeholder="Password" formControlName="password">
+        <button class="primary" type="submit">Register</button>
+    </form>
+</section>

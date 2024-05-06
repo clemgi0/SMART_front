@@ -42,6 +42,6 @@ export class ListTrackerComponent {
   showMap(tracker: Tracker): void {
     const trackerJson = JSON.stringify(tracker);
     const userJson = JSON.stringify(this.user);
-    this.router.navigate(['/map'], { queryParams: { user: userJson} });
+    this.router.navigate(['/map'], { queryParams: { user: userJson, tracker: trackerJson} });
   }
 }
