@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .tracker-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -170px;
+  }
+  
+  .tracker-item {
+    margin-bottom: 10px; /* Adjust spacing between items */
+  }
+  
+  .tracker-button {
+    background-color: #a81725; /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tracker-button:hover {
+    background-color: #e74c3c; /* Darker red on hover */
+  }
+  

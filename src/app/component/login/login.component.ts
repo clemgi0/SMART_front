@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { LoginService } from '../login.service';
+import { LoginService } from '../../service/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -31,11 +31,8 @@ export class LoginComponent {
       try {
         const user = await this.loginService.testLogin(username, password);
 
-        console.log(`${username} logged in with access token ${user.access_token} and id ${user.user_id}.`);
-        this.router.navigate(['/map'], { queryParams: { user_id: user.user_id, access_token: user.access_token} });
-
-        // const res = await this.loginService.getHome(user.access_token);
-        // console.log(`Here are his home coordinates: lat ${res[0].latitude} and long ${res[0].longitude}`);
+        const userJson = JSON.stringify(user);
+        this.router.navigate(['/list-tracker'], { queryParams: { user: userJson} })
       } catch (error) {
         console.log(`Failed to log in: ${error}`);
       }
