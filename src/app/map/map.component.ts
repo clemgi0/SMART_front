@@ -1,7 +1,6 @@
 import { Component, AfterViewInit, inject } from '@angular/core';
 import * as L from 'leaflet';
 import { LoginService } from '../login.service';
-import { Router } from '@angular/router';
 import { User } from '../user';
 import { ActivatedRoute } from '@angular/router';
 

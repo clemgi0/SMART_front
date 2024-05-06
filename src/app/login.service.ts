@@ -37,7 +37,7 @@ export class LoginService {
     const response = await fetch(this.url);
     const data = await response.json();
 
-    const foundUser = data.find((user: any) => user.id === parseInt(id));
+    const foundUser = data.find((user: any) => user.id === id);
 
     return foundUser;
   }
