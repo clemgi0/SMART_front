@@ -41,6 +41,20 @@ export class MapComponent implements AfterViewInit {
 
     tiles.addTo(this.map);
   }
+  
+  private async fetchHistoryPosition(): Promise<void> {
+    const res = await this.mapService.getHistoryPosition(this.user.access_token, this.tracker.id);
+
+    // Clear previous markers
+    this.positionHistory.forEach(marker => marker.removeFrom(this.map as L.Map));
+    this.positionHistory = [];
+
+    res.forEach((position: any) => {
+      const markerPos = L.marker([position.latitude, position.longitude]).addTo(this.map as L.Map);
+      markerPos.bindPopup(`Timestamp: ${position.timestamp}`, { autoClose: false }).openPopup();
+      this.positionHistory.push(markerPos);
+    });
+  }
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
@@ -58,27 +72,14 @@ export class MapComponent implements AfterViewInit {
     this.initMap();
     
     var marker = L.marker([this.tracker.home_latitude, this.tracker.home_longitude], {icon: this.homeIcon}).addTo(this.map!);
-    marker.bindPopup("<b>Home</b><br>Pop me", {autoClose: false}).openPopup();
+    marker.bindPopup("<b>Home</b>", {autoClose: false}).openPopup();
     
-    if(this.tracker.status) {
-      const res = await this.mapService.getHistoryPosition(this.user.access_token, this.tracker.id);
-
-      res.forEach((position: any) => {
-        const markerPos = L.marker([position.latitude, position.longitude]).addTo(this.map!);
-        markerPos.bindPopup(`Timestamp: ${position.timestamp - res[0].timestamp}`, {autoClose: false}).openPopup();
-        this.positionHistory.push(markerPos);
-      });
+    if (this.tracker.status) {
+      await this.fetchHistoryPosition(); // Fetch initially
+      setInterval(async () => {
+        await this.fetchHistoryPosition(); // Fetch every 2 minutes
+      }, 2 * 60 * 1000);
     }
-
-    this.map?.on('click', this.onMapClick.bind(this));
-  }
-
-  onMapClick(e :L.LeafletMouseEvent) {
-    var popup = L.popup();
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(this.map as L.Map);
   }
 
   goBack() {
