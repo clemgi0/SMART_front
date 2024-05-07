@@ -9,12 +9,12 @@
     <form [formGroup]="loginForm" (submit)="login()">
         <div class="controlForm">
             <label>Username</label>
-            <input type="text" placeholder="Username" formControlName="username">
+            <input type="text" placeholder="Username" formControlName="username" required>
         </div>
         
         <div class="controlForm">
             <label>Password</label>
-            <input type="password" placeholder="Password" formControlName="password">
+            <input type="password" placeholder="Password" formControlName="password" required>
         </div>
 
         <div class="buttonContainer">

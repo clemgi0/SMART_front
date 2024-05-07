@@ -1,0 +1,19 @@
+<header>
+    <div>
+        <a (click)="goBack()">
+            <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+        </a>
+        <p (click)="goBack()">Home</p>
+    </div>
+    <button [routerLink]="['/']" class="signout-button">Sign out</button>
+</header>
+
+<div class="container">
+  <form [formGroup]="addTrackerForm" (submit)="addTracker()">
+        <label for="name">Nom</label>
+        <input type="text" formControlName="name" required>
+        <label for="id">Tracker ID</label>
+        <input type="number" formControlName="id" required>
+        <button type="submit" class="tracker-button">Add Tracker</button>
+    </form>
+</div>

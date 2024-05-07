@@ -50,4 +50,9 @@ export class ListTrackerComponent {
     const userJson = JSON.stringify(this.user);
     this.router.navigate(['/list-tracker'], { queryParams: { user: userJson} })
   }
+
+  addTracker() {
+    const userJson = JSON.stringify(this.user);
+    this.router.navigate(['/add-tracker'], { queryParams: { user: userJson} })
+  }
 }

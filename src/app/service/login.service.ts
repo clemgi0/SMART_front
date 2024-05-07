@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
-  url: string = 'https://04dc-134-214-58-15.ngrok-free.app';
+  url: string = 'http://localhost:8000';
 
   constructor() { }
   
@@ -12,7 +12,8 @@ export class LoginService {
     const response = await fetch(this.url + '/login', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': '69420'
       },
       body: JSON.stringify({
         login,

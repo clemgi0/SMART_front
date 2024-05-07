@@ -3,6 +3,7 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { MapComponent } from './component/map/map.component';
 import { ListTrackerComponent } from './component/list-tracker/list-tracker.component';
+import { AddTrackerComponent } from './component/add-tracker/add-tracker.component';
 
 const routeConfig: Routes = [
     {
@@ -25,6 +26,11 @@ const routeConfig: Routes = [
       component: MapComponent,
       title: 'Map'
     },
+    {
+      path: 'add-tracker',
+      component: AddTrackerComponent,
+      title: 'Add Tracker'
+    }
   ];
   
   export default routeConfig;
