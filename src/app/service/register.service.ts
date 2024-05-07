@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class RegisterService {
-  url: string = 'http://localhost:8000';
+  url: string = 'https://04dc-134-214-58-15.ngrok-free.app';
 
   constructor() { }
 
