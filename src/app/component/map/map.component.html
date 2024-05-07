@@ -1,10 +1,12 @@
 <header>
-    <a [routerLink]="['/list-tracker']">
-        <img class="brand-logo" src="/assets/icon.svg" alt="logo" aria-hidden="true">
-    </a>
-    <p [routerLink]="['/list-tracker']">Home</p>
+    <div>
+      <a (click)="goBack()">
+          <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+      </a>
+      <p (click)="goBack()">Home</p>
+    </div>
     <button [routerLink]="['/']" class="signout-button">Sign out</button>
-</header>
+  </header>
 
 <div class="map-frame">
     <div id="map"></div>

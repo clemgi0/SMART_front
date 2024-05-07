@@ -1,14 +1,16 @@
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 30px;
   padding: 10px;
   background-color: #FF1C31;
   box-shadow: 0px 5px 25px var(--shadow-color);
 }
 
-header:last-child {
-  margin-left: auto;
+header div {
+  display: flex;
+  align-items: center;
 }
 
 header p {
@@ -21,15 +23,15 @@ header p {
 
 .brand-logo {
   height: 40px;
+  cursor: pointer;
 }
 
 .map-frame {
-  border: 2px solid black;
   height: 37em;
 }
 
 #map {
-  min-height: 90%;
+  min-height: 100%;
 }
 
 .back-button-container {

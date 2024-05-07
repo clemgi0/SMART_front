@@ -1,8 +1,10 @@
 <header>
-  <a [routerLink]="['/list-tracker']">
-      <img class="brand-logo" src="/assets/icon.svg" alt="logo" aria-hidden="true">
-  </a>
-  <p [routerLink]="['/list-tracker']">Home</p>
+  <div>
+    <a (click)="goBack()">
+        <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+    </a>
+    <p (click)="goBack()">Home</p>
+  </div>
   <button [routerLink]="['/']" class="signout-button">Sign out</button>
 </header>
 
@@ -12,7 +14,7 @@
         <div class="tracker-item-card">
           <small>Tracker ID: {{tracker.id}}</small>
           <p>Nom: {{tracker.name}}</p>
-          <p>Status: {{tracker.status ? "alert" : "normal"}}</p>
+          <p>Status: {{tracker.status ? "Alert" : "Normal"}}</p>
 
           <button class="tracker-button button-{{tracker.id}}" (click)="showMap(tracker)">
             Track
