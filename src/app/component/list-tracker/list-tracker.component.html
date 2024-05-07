@@ -1,9 +1,25 @@
+<header>
+  <div>
+    <a (click)="goBack()">
+        <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+    </a>
+    <p (click)="goBack()">Home</p>
+  </div>
+  <button [routerLink]="['/']" class="signout-button">Sign out</button>
+</header>
+
 <div class="container">
     <ul *ngFor="let tracker of trackerList" class="tracker-list">
       <li class="tracker-item">
-        <button class="tracker-button button-{{tracker.id}}" (click)="showMap(tracker)">
-          Tracker ID: {{tracker.id}} | Nom: {{tracker.name}} | Status: {{tracker.status ? "alert" : "normal"}}
-        </button>
+        <div class="tracker-item-card">
+          <small>Tracker ID: {{tracker.id}}</small>
+          <p>Nom: {{tracker.name}}</p>
+          <p>Status: {{tracker.status ? "Alert" : "Normal"}}</p>
+
+          <button class="tracker-button button-{{tracker.id}}" (click)="showMap(tracker)">
+            Track
+          </button>
+        </div>
       </li>
     </ul>
 </div>

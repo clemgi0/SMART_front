@@ -1,37 +1,89 @@
 section {
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement */
-    height: 100vh; /* Pour occuper toute la hauteur de la page */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Older browsers */
+  background: #FF1C31;
+    
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(top, #FF1C31, #D71729);
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom, #FF1C31, #D71729);
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 30px;
 }
 
 form {
-    display: flex;
-    flex-direction: column; /* Aligner les éléments verticalement */
-    align-items: center; /* Centrer horizontalement */
-    margin-top: -170px; /* Déplacer vers le haut */
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 20px;
+  padding: 40px;
 }
 
 label {
-    font-weight: bold; /* Texte en gras */
-    color: #333; /* Couleur du texte */
-    margin-bottom: 5px; /* Espacement avec les champs de texte */
+  font-weight: bold;
+  margin: 20px;
 }
 
 input[type="text"],
 input[type="password"] {
-    margin-bottom: 10px; /* Espacement entre les champs */
-    border-radius: 5px; /* Arrondir les angles */
-    padding: 8px; /* Augmenter la marge intérieure */
-    border: 1px solid #ccc; /* Bordure grise */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #FFFFFF;
 }
 
-button {
-    background-color: #a81725; /* Rouge */
-    color: white; /* Texte blanc */
-    border: none;
-    border-radius: 5px; /* Arrondir les angles */
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 10px; /* Espacement avec les champs de texte */
+small {
+  color: #FFFFFF;
+}
+
+.buttonPrimary {
+  color: #FFFFFF;
+  background-color: #FF1C31;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  min-width: 100px;
+}
+
+.buttonPrimary:hover {
+  background-color: #D71729;
+}
+
+.buttonSecondary {
+  color: #FFFFFF;
+  background: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  min-width: 100px;
+}
+
+.buttonSecondary:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.center {
+  text-align: center;
+}
+
+.brand-logo {
+  height: 100px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }

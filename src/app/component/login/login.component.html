@@ -1,10 +1,32 @@
 <section>
-        <form [formGroup]="loginForm" (submit)="login()">
+    <div class="center">
+        <a [routerLink]="['/']">
+            <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+        </a>
+        <h1>Login</h1>
+    </div>
+
+    <form [formGroup]="loginForm" (submit)="login()">
+        <div class="controlForm">
             <label>Username</label>
             <input type="text" placeholder="Username" formControlName="username">
+        </div>
+        
+        <div class="controlForm">
             <label>Password</label>
             <input type="password" placeholder="Password" formControlName="password">
-            <button class="primary" type="submit">Login</button>
-        </form>
-        <button class="secondary" (click)="register()">Register</button>
+        </div>
+
+        <div class="buttonContainer">
+            <button class="buttonPrimary" type="submit">Login</button>
+        </div>
+    </form>
+
+    <div>
+        <small>You don't have an account?</small>
+        <div class="buttonContainer">
+            <button class="buttonSecondary" (click)="register()">Register</button>
+        </div>
+    </div>
+
 </section>
